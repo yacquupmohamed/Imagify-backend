@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: imagify-backend
+    runtime: node
+    plan: free
+    region: oregon
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: CLIPDROP_API
+        sync: false
+      - key: WAAFI_MERCHANT_UID
+        sync: false
+      - key: WAAFI_API_USER_ID
+        sync: false
+      - key: WAAFI_API_KEY
+        sync: false
